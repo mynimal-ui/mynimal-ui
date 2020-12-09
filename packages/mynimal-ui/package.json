@@ -19,7 +19,13 @@
   "module": "build/esm/index.js",
   "scripts": {
     "build": "node ../../scripts/build",
+    "build-storybook": "build-storybook",
+    "storybook": "start-storybook -p 6006",
     "typescript": "tsc -p tsconfig.json"
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "^6.1.10",
+    "@storybook/react": "^6.1.10"
   },
   "peerDependencies": {
     "react": ">=16.8.0",
