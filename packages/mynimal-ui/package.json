@@ -15,7 +15,10 @@
     "directory": "packages/mynimal-ui"
   },
   "license": "MIT",
+  "main": "build/cjs/index.js",
+  "module": "build/esm/index.js",
   "scripts": {
+    "build": "node ../../scripts/build",
     "typescript": "tsc -p tsconfig.json"
   },
   "peerDependencies": {
