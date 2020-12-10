@@ -119,6 +119,9 @@ dist
 # rollup.js build output
 build
 
+# Storybook build output
+build_storybook
+
 # Gatsby files
 .cache/
 # Comment in the public line in if your project uses Gatsby and not Next.js
