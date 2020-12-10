@@ -1,4 +1,5 @@
 const path = require('path');
+const fs = require('fs');
 const rollup = require('rollup');
 const peerDepsExternal = require('rollup-plugin-peer-deps-external');
 const resolve = require('@rollup/plugin-node-resolve').default;
@@ -8,7 +9,8 @@ const { DEFAULT_EXTENSIONS } = require('@babel/core');
 
 // This will be the package.json for the specific package where the build script was executed from
 const cwd = process.cwd();
-const pkg = require(path.join(cwd, './package.json'));
+const packagePath = path.join(cwd, './package.json');
+const pkg = JSON.parse(fs.readFileSync(packagePath, 'utf8'));
 
 const extensions = [...DEFAULT_EXTENSIONS, '.ts', '.tsx'];
 
@@ -54,9 +56,11 @@ async function build() {
   const bundle = await rollup.rollup(inputOptions);
 
   // Write to disk
-  for (const outputOption of outputOptions) {
-    await bundle.write(outputOption);
-  }
+  const promises = [];
+  outputOptions.forEach((outputOption) => {
+    promises.push(bundle.write(outputOption));
+  });
+  await Promise.all(promises);
 }
 
 build();
