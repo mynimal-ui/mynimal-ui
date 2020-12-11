@@ -17,6 +17,7 @@ module.exports = {
     'plugin:eslint-comments/recommended',
     'plugin:promise/recommended',
     'plugin:unicorn/recommended',
+    'plugin:jest/recommended',
     'prettier',
     'prettier/react',
     'prettier/@typescript-eslint',
@@ -25,8 +26,8 @@ module.exports = {
     // https://basarat.gitbooks.io/typescript/docs/tips/defaultIsBad.html
     'import/prefer-default-export': 'off',
 
-    // These are development scripts
-    'import/no-extraneous-dependencies': ['error', { devDependencies: ['./scripts/**/*.js'] }],
+    // Missing yarn workspace support
+    'import/no-extraneous-dependencies': 'off',
 
     // This is a UI library
     'react/jsx-props-no-spreading': 'off',
@@ -38,13 +39,6 @@ module.exports = {
     'unicorn/prevent-abbreviations': 'off',
   },
   overrides: [
-    {
-      files: ['*.stories.js', '*.stories.jsx', '*.stories.ts', '*.stories.tsx'],
-      rules: {
-        // Stories import from monorepo root dev dependencies
-        'import/no-extraneous-dependencies': 'off',
-      },
-    },
     {
       files: ['*.ts', '*.tsx'],
       rules: {

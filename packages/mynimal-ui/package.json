@@ -19,7 +19,7 @@
   "module": "build/esm/index.js",
   "scripts": {
     "build": "node ../../scripts/build",
-    "typescript": "tsc -p tsconfig.json"
+    "test:typescript": "tsc -p tsconfig.json"
   },
   "peerDependencies": {
     "react": ">=16.8.0",
