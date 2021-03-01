@@ -23,6 +23,9 @@ module.exports = {
     'prettier/@typescript-eslint',
   ],
   rules: {
+    // https://eslint.org/docs/rules/arrow-body-style
+    'arrow-body-style': ['error', 'always'],
+
     // https://basarat.gitbooks.io/typescript/docs/tips/defaultIsBad.html
     'import/prefer-default-export': 'off',
 
