@@ -1,0 +1,28 @@
+{
+  "name": "@mynimal-ui/core",
+  "version": "1.0.0",
+  "description": "Collection of React components.",
+  "keywords": [
+    "react",
+    "react-component"
+  ],
+  "bugs": {
+    "url": "https://github.com/mynimal-ui/mynimal-ui/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mynimal-ui/mynimal-ui.git",
+    "directory": "packages/mynimal-ui"
+  },
+  "license": "MIT",
+  "main": "build/cjs/index.js",
+  "module": "build/esm/index.js",
+  "scripts": {
+    "build": "node ../../scripts/build",
+    "test:typescript": "tsc -p tsconfig.json"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  }
+}
