@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 
 export interface ButtonProps {
   /**
-   * Button contents
+   * The content of the component.
    */
   children: string;
 

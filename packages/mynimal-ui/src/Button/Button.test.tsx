@@ -9,7 +9,7 @@ const defaultProps = {
 };
 
 describe('<Button />', () => {
-  test('button renders with correct text', () => {
+  test('renders with correct text', () => {
     const { queryByText } = render(<Button {...defaultProps} />);
     expect(queryByText(defaultProps.children)).toBeTruthy();
   });
